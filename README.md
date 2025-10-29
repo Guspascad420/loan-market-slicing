@@ -3,6 +3,9 @@
 This project is a slicing task for loan market website, built using **Next.js + Tailwind CSS**.  
 It focuses on clean, maintainable, and responsive UI structure.
 
+## 🚀 Demo
+🔗 (https://loan-market-slicing.vercel.app/) 
+
 ## 🧠 Tech Stack
 - **Next.js 14 (App Router)**
 - **React 18**
