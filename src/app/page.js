@@ -32,11 +32,11 @@ export default function Home() {
             <Image src={profilePicture} width={150} height="auto" className="size-[135px] mx-auto md:mx-0" alt="profile picture" />
             <div className="md:ml-10">
               <div className="font-semibold text-primary text-xl text-center md:text-start mt-3 md:mt-0 md:text-3xl mb-3">YOHANNES AFFANDY (JOJO)</div>
-              <div className="flex pl-10 md:pl-0">
+              <div className="flex pl-5 md:pl-0">
                 <div className="md:pr-15 pr-5 border-r border-[#C1C1C1]">
                   <div className="flex items-center mb-3">
                     <div className="bg-secondary inline-block mr-3 rounded-full p-1">
-                      <Image src={office} className="w-7 h-auto md:w-7"
+                      <Image src={office} className="w-7 h-auto md:w-10"
                         width={0}
                         height={0} alt="" />
                     </div>
@@ -54,7 +54,7 @@ export default function Home() {
                     <div className="bg-secondary inline-block mr-3 rounded-full p-1">
                       <Image src={securedLetter} width={0} height={0} className="w-6 h-auto md:w-7" alt="email" />
                     </div>
-                    <div className="wrap-break-word text-sm md:text-md">it@loanmarket.co.id</div>
+                    <div className="wrap-break-word text-sm md:text-md w-24 md:w-auto">it@loanmarket.co.id</div>
                   </div>
                   <div className="flex items-center">
                     <div className="bg-secondary inline-block mr-3 rounded-full p-1">
@@ -79,7 +79,7 @@ export default function Home() {
               <div className="mt-10 mx-8 md:mx-0 rounded-xl shadow-xl bg-white">
                 <div className="flex flex-wrap lg:flex-nowrap">
                   <div className="md:pr-12 md:ml-12 mx-auto my-5 border-b-[1.5px] md:border-b-0  md:border-r-[1.5px] md:border-[#C1C1C1]">
-                    <div className="flex flex-col items-center py-5">
+                    <div className="flex flex-col items-center pt-3 pb-5">
                       <div className="font-semibold text-2xl">PINJAMAN DISETUJUI</div>
                       <CircularProgressbar
                         value={40}
@@ -95,11 +95,11 @@ export default function Home() {
                       <div className="font-medium">2/5 Pinjaman telah disetujui</div>
                     </div>
                   </div>
-                  <div className="md:my-3 mb-7 md:mb-0">
+                  <div className="md:my-3 overflow-hidden mb-7 md:mb-0">
                     <div className="flex justify-between">
                       <div></div>
-                      <div className="font-semibold text-2xl pl-16 lg:pl-14 md:mt-5">TARGET</div>
-                      <Image className="mr-10 md:mr-5" src={edit} width={30} height={30} alt="edit" />
+                      <div className="font-semibold text-2xl pl-12 md:pl-14 md:mt-5">TARGET</div>
+                      <Image className="mr-5" src={edit} width={30} height={30} alt="edit" />
                     </div>
                     <div className="px-22 flex flex-col items-center">
                       <CircularProgressbar

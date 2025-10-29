@@ -1,4 +1,4 @@
-import { ArrowDropDown, NotificationsOutlined } from "@mui/icons-material"
+import { ArrowDropDown, Menu, NotificationsOutlined } from "@mui/icons-material"
 import Image from "next/image"
 import profilePicture from "../components/images/profile-picture.png"
 
@@ -6,12 +6,8 @@ export default function Navbar({ title, toggleSidebar }) {
     return (
         <nav className="flex justify-between  pl-5 pr-3 md:px-5 pb-3 mt-3 border-b-[1.5px] border-[#C1C1C1] items-center">
             <div className="flex items-center">
-                <button
-                    className="lg:hidden text-2xl"
-                    onClick={toggleSidebar}
-                >
-                    ☰
-                </button>
+                <Menu className="lg:hidden text-2xl"
+                    onClick={toggleSidebar}/>
                 <a href='#' className='text-xl md:text-2xl text-gray400 pl-5'>{title}</a>
             </div>
             <div className="flex items-center md:border-l-[1.5px] md:border-r-[1.5px] border-[#C1C1C1]">
