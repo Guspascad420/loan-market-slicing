@@ -18,10 +18,10 @@ const connectorPlugin = {
         let fontSize, labelFontSize, lineLen, offset;
 
         if (width < 640) { // mobile (sm)
-            fontSize = 20;
+            fontSize = 17;
             labelFontSize = 12;
-            lineLen = 14;
-            offset = 25;
+            lineLen = 0;
+            offset = 10;
         } else if (width < 1024) { // tablet (md)
             fontSize = 20;
             labelFontSize = 13;

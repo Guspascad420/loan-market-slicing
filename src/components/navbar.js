@@ -7,7 +7,7 @@ export default function Navbar({ title, toggleSidebar }) {
         <nav className="flex justify-between  pl-5 pr-3 md:px-5 pb-3 mt-3 border-b-[1.5px] border-[#C1C1C1] items-center">
             <div className="flex items-center">
                 <button
-                    className="lg:hidden"
+                    className="lg:hidden text-2xl"
                     onClick={toggleSidebar}
                 >
                     ☰

@@ -78,7 +78,7 @@ export default function Home() {
               </div>
               <div className="mt-10 mx-8 md:mx-0 rounded-xl shadow-xl bg-white">
                 <div className="flex flex-wrap lg:flex-nowrap">
-                  <div className="md:pr-12 ml-12 my-5 border-b-[1.5px] md:border-b-0  md:border-r-[1.5px] md:border-[#C1C1C1]">
+                  <div className="md:pr-12 md:ml-12 mx-auto my-5 border-b-[1.5px] md:border-b-0  md:border-r-[1.5px] md:border-[#C1C1C1]">
                     <div className="flex flex-col items-center py-5">
                       <div className="font-semibold text-2xl">PINJAMAN DISETUJUI</div>
                       <CircularProgressbar
@@ -98,8 +98,8 @@ export default function Home() {
                   <div className="md:my-3 mb-7 md:mb-0">
                     <div className="flex justify-between">
                       <div></div>
-                      <div className="font-semibold text-2xl pl-14 md:mt-5">TARGET</div>
-                      <Image className="mr-5" src={edit} width={30} height={30} alt="edit" />
+                      <div className="font-semibold text-2xl pl-16 lg:pl-14 md:mt-5">TARGET</div>
+                      <Image className="mr-10 md:mr-5" src={edit} width={30} height={30} alt="edit" />
                     </div>
                     <div className="px-22 flex flex-col items-center">
                       <CircularProgressbar
