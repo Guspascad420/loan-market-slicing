@@ -3,11 +3,24 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #17A9E2;
+  --secondary: #E2F0FF;
+  --dark-blue: #005274;
+  --gray400: #4F5051;
+}
+
+.material-symbols-outlined {
+  font-size: inherit; /* biar ngikut Tailwind text-size */
+  line-height: 1; 
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-dark-blue: var(--dark-blue);
+  --color-gray400: var(--gray400);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

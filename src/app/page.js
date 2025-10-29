@@ -1,65 +1,144 @@
+"use client";
+import Navbar from "@/components/navbar";
 import Image from "next/image";
+import phone from "../components/images/Phone.svg"
+import office from "../components/images/office.svg"
+import contact from "../components/images/contact.svg"
+import securedLetter from "../components/images/secured-letter.svg"
+import profilePicture from "../components/images/profile-picture.png"
+import InfoCard from "@/components/card/info-card";
+import file from "../components/images/file.svg"
+import shoppingBag from "../components/images/shopping-bag.svg"
+import bank from "../components/images/bank-building.svg"
+import edit from "../components/images/edit.svg"
+import "react-circular-progressbar/dist/styles.css";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import Notification from "@/components/timeline/notification";
+import BankChart from "@/components/chart/bank-chart";
+import Sidebar from "@/components/sidebar";
+import { useEffect, useState } from "react";
+import useIsDesktop from "@/utils/is-desktop";
 
 export default function Home() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div>
+      <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} active="dashboard" />
+      <div className="lg:ml-56">
+        <Navbar title="Dashboard" toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+        <div className="md:px-7 mt-10 pb-7 border-b border-[#C1C1C1]">
+          <div className="flex flex-col md:flex-row">
+            <Image src={profilePicture} width={150} height="auto" className="size-[135px] mx-auto md:mx-0" alt="profile picture" />
+            <div className="md:ml-10">
+              <div className="font-semibold text-primary text-xl text-center md:text-start mt-3 md:mt-0 md:text-3xl mb-3">YOHANNES AFFANDY (JOJO)</div>
+              <div className="flex pl-10 md:pl-0">
+                <div className="md:pr-15 pr-5 border-r border-[#C1C1C1]">
+                  <div className="flex items-center mb-3">
+                    <div className="bg-secondary inline-block mr-3 rounded-full p-1">
+                      <Image src={office} className="w-7 h-auto md:w-7"
+                        width={0}
+                        height={0} alt="" />
+                    </div>
+                    <div className="text-sm md:text-md w-24 md:w-full">Loan Market Office Dev</div>
+                  </div>
+                  <div className="flex items-center mb-3">
+                    <div className="bg-secondary inline-block mr-3 rounded-full py-1 px-1.5 ">
+                      <div className="font-semibold text-lg text-primary">ID:</div>
+                    </div>
+                    <div className="text-sm md:text-md">LM9990001</div>
+                  </div>
+                </div>
+                <div className="pl-5 md:pl-15">
+                  <div className="flex items-center mb-3">
+                    <div className="bg-secondary inline-block mr-3 rounded-full p-1">
+                      <Image src={securedLetter} width={0} height={0} className="w-6 h-auto md:w-7" alt="email" />
+                    </div>
+                    <div className="wrap-break-word text-sm md:text-md">it@loanmarket.co.id</div>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="bg-secondary inline-block mr-3 rounded-full p-1">
+                      <Image src={phone} width={0} height={0} className="w-6 h-auto md:w-7" alt="phone" />
+                    </div>
+                    <div className="text-sm md:text-md">6281234567890</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="bg-[#F2F2F2] md:px-7 pt-10 pb-10">
+          <div className="flex flex-col lg:flex-row">
+            <div>
+              <div className="flex flex-wrap gap-5 justify-center md:gap-0 md:justify-normal md:flex-nowrap">
+                <InfoCard title="CONTACT" number={51} image={contact} />
+                <InfoCard title="LOAN" number={56} image={file} />
+                <InfoCard title="PRODUCT" number={80} image={shoppingBag} />
+                <InfoCard title="BANK" number={70} image={bank} />
+              </div>
+              <div className="mt-10 mx-8 md:mx-0 rounded-xl shadow-xl bg-white">
+                <div className="flex flex-wrap lg:flex-nowrap">
+                  <div className="md:pr-12 ml-12 my-5 border-b-[1.5px] md:border-b-0  md:border-r-[1.5px] md:border-[#C1C1C1]">
+                    <div className="flex flex-col items-center py-5">
+                      <div className="font-semibold text-2xl">PINJAMAN DISETUJUI</div>
+                      <CircularProgressbar
+                        value={40}
+                        text={`40%`}
+                        className="font-semibold size-32 my-5"
+                        strokeWidth={10}
+                        styles={buildStyles({
+                          textColor: "#000",
+                          pathColor: "#17A9E2",
+                          trailColor: "##C1C1C1",
+                        })}
+                      />
+                      <div className="font-medium">2/5 Pinjaman telah disetujui</div>
+                    </div>
+                  </div>
+                  <div className="md:my-3 mb-7 md:mb-0">
+                    <div className="flex justify-between">
+                      <div></div>
+                      <div className="font-semibold text-2xl pl-14 md:mt-5">TARGET</div>
+                      <Image className="mr-5" src={edit} width={30} height={30} alt="edit" />
+                    </div>
+                    <div className="px-22 flex flex-col items-center">
+                      <CircularProgressbar
+                        value={100}
+                        text={`280%`}
+                        className="font-semibold size-32 my-5"
+                        strokeWidth={10}
+                        styles={buildStyles({
+                          textColor: "#000",
+                          pathColor: "#17A9E2",
+                          trailColor: "##C1C1C1",
+                        })}
+                      />
+                      <div className="font-medium">Rp14.000.000.000,00 /</div>
+                      <div className="font-medium">Rp5.000.000.000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white px-5 pt-5 mx-7 md:mx-auto lg:mx-0 lg:max-w-full lg:ml-3 mt-5 lg:mt-0 shadow-lg rounded-lg">
+              <div className="font-semibold text-xl mb-3">NOTIFICATION</div>
+              <Notification />
+            </div>
+          </div>
+          <div className="bg-white shadow-lg rounded-xl mt-5 pb-10 mx-7 md:mx-0 lg:w-[72%]">
+            <div className="text-center font-semibold text-xl md:text-2xl pb-5 pt-7">Top 5 Bank Approval Tertinggi</div>
+            <div className="flex justify-center">
+              <BankChart />
+            </div>
+          </div>
         </div>
-      </main>
+        {sidebarOpen && (
+          <div
+            className="fixed inset-0 bg-black opacity-50 z-20 lg:hidden"
+            onClick={() => setSidebarOpen(false)}
+          />
+        )}
+      </div>
     </div>
   );
 }
