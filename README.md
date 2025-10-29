@@ -12,7 +12,7 @@ It focuses on clean, maintainable, and responsive UI structure.
 | Route | Description |
 |:------|:-------------|
 | `/`   | Dashboard |
-| `/bank-products` | Bank Product list page |
+| `/product/bank` | Bank Product list page |
 | `/product/bank/[id]` | Bank Product detail page |
 | `/product/bank/[id]/edit` | Edit Bank Product page |
 | `/loan/address` | Edit Application (Address) page |
